@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import mysql.connector
-cnx = mysql.connector.connect(user='root', database='nba4', password = 'Naruto#12445')
+cnx = mysql.connector.connect(**st.secrets["mysql"])
 
 def run_query(query):
     with cnx.cursor() as cur:
